@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <link rel="stylesheet" href="/media.css">
+  <title>Calculator!</title>
+  
+  <style>
+       @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+
+/* ---media--- */
+@media screen and (max-width: 450px) {
+    .container {
+      height: 28rem;
+      width: 20rem;
+      padding: 4px 4px;
+    }
+    .row button {
+        height: 42px;
+        font-size: 4vh;
+    }
+    .btn1 button {
+        font-size: 3vh;
+    }
+    .input {
+        width: 92%;
+        height: 12vh;
+        font-size: 5vh;
+    
+    }
+
+}
+  body{
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    width: 100vw;
+    margin: 0%;
+    padding: 0%;
+ 
+  }
+  h1{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: green;
+    font-size: 25px;
+    
+  }
+  .container {
+    margin: auto;
+    border: 2px solid black ;
+    height: 21rem;
+    width:21rem;
+    /* height: 50vh; /* Adjust this value as needed */
+    /* width: 40vw; Adjust this value as needed */ 
+    margin-top: 20px;
+    background-color: #ccc;
+    flex-wrap: wrap;
+  }
+  .input {
+    width: 90%;
+    height: 48px;
+    font-size : 25px;
+    /* font-size: 3vw; Adjust this value as needed */
+    border: 2px solid black;
+    text-align:right;
+    padding: 1px 6px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    border-radius:5px;
+    
+
+  }
+  .input:focus {
+    outline:none;
+  }
+  .row {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 2px;
+  }
+  .row button {
+    height: 42px;
+    width: 25%;
+    /* height: 10vh; /* Adjust this value as needed */
+  /* width: 20vw; Adjust this value as needed */ 
+    margin:3px;
+    font-size: 19px;
+    /* font-size: 2vw; Adjust this value as needed */
+    font-weight: bold;
+    border-radius:4px;
+    font-family: 'Poppins', sans-serif;
+    cursor:pointer;
+    
+  }
+  .row button:focus {
+    outline:none;
+  }
+  .btnclr {
+    background-color:#FFDF00;
+    font-weight:bold;
+  }
+  .btn1 button{
+    width:50%;
+    background-color:green;
+    color:white;
+    font-family: 'Poppins', sans-serif;
+    font-size:15px;
+    text-align:center;
+    cursor:pointer;
+  }
+ 
+  
+  </style> 
+</head>
+<body>
+  <h1>Calculator - Made By Krish</h1>
+  <div class="container"> 
+    <div class="row">
+      <input class="input"id="a" readonly="" > 
+    </div>
+    <div class="row">
+      <button onclick="pick(7)">7</button>
+      <button onclick="pick(8)" >8</button>
+      <button onclick="pick(9)" >9</button>
+      <button onclick="pick('/')"class="btnclr">/</button>
+  </div>
+    <div class="row">
+      <button onclick="pick(4)" >4</button>
+      <button onclick="pick(5)">5</button>
+      <button onclick="pick(6)">6</button>
+      <button onclick="pick('*')" class="btnclr">*</button>
+    </div>
+    <div class="row">
+      <button onclick="pick(1)">1</button>
+      <button onclick="pick(2)">2</button>
+      <button onclick="pick(3)">3</button>
+      <button onclick="pick('+')" class="btnclr">+</button>
+    </div>
+    <div class="row">
+      <button onclick="pick('.')">.</button>
+      <button onclick="pick('0')">0</button>
+      <button class="btnclr" onclick="solve()">=</button>
+      <button onclick="pick('-')" class="btnclr">-</button>
+      
+    </div>
+    <div onclick="clr()" class="row btn1"><button>CLEAR</button>
+      
+    </div>
+
+    <script>
+    function pick(val)
+    {
+      document.getElementById("a").value+=val;
+    }
+    function solve()
+    {
+     var x= document.getElementById("a").value;
+      var y= eval(x)
+      document.getElementById("a").value=y
+      
+    }
+    function clr()
+    {
+      document.getElementById("a").value = "";
+    }
+  
+
+    
+    
+    </script>
+</body>
+</html>
